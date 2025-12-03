@@ -1,0 +1,48 @@
+:root{
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --accent: #0077cc;
+  --muted: #666;
+}
+*{box-sizing:border-box}
+/* Force the popup width to a sensible fixed size to avoid tiny toolbar-icon-sized popup */
+html, body { width: 360px !important; min-width: 320px; max-width: 480px; }
+/* allow the popup to use available width while keeping a sensible minimum */
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;background:var(--bg);margin:0;padding:12px;width:100%}
+.container{display:flex;flex-direction:column;gap:10px;width:100%}
+h1{font-size:18px;margin:0}
+form{display:flex;gap:8px;align-items:center}
+/* let the input grow/shrink properly inside a flex container */
+input[type="text"]{flex:1;min-width:0;padding:8px;border:1px solid #dcdcdc;border-radius:6px}
+button{padding:8px 12px;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+button:disabled{opacity:0.6;cursor:not-allowed}
+.hidden{display:none}
+.error{color:#b00020;font-size:13px}
+.card{background:var(--card);padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+.city{font-weight:600}
+.temp{font-size:20px;margin-top:4px}
+.temp-val{vertical-align:middle}
+.conds{color:var(--muted);margin-top:4px}
+
+/* New styles for current weather and 7-day forecast */
+.current{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.forecast-list{display:flex;gap:8px;overflow-x:auto;padding-top:10px}
+.forecast-card{min-width:78px;background:#fbfdff;border:1px solid #eef3f8;border-radius:8px;padding:8px;text-align:center;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.f-day{font-weight:700;font-size:13px}
+.f-desc{font-size:12px;color:var(--muted);margin-top:6px;min-height:28px}
+.f-temps{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.f-max{color:var(--accent);font-weight:700}
+.f-min{color:#999}
+.icon{font-size:1.4rem;line-height:1;margin-right:8px;vertical-align:middle}
+.f-icon{font-size:1.25rem;margin-top:6px}
+
+/* Small adjustments for responsiveness */
+@media (max-width: 360px){
+  html, body { width: 100% !important; }
+  body{min-width:100%}
+  .forecast-card{min-width:72px;padding:6px}
+  .temp{font-size:18px}
+}
+
+/* Visually hidden but available to screen readers */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}

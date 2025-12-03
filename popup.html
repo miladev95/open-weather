@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Open Weather</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Open Weather</h1>
+    <form id="weather-form">
+      <label for="city-input" class="sr-only">City</label>
+      <input id="city-input" aria-label="City" type="text" placeholder="Enter city (e.g. London)" autocomplete="off" />
+      <button id="fetch-btn" type="submit">Get Weather</button>
+    </form>
+
+    <div id="loading" class="hidden">Loading…</div>
+    <div id="error" class="error hidden"></div>
+
+    <div id="result" class="card hidden">
+      <div id="city-name" class="city"></div>
+
+      <div id="current" class="current">
+        <div id="temperature" class="temp"></div>
+        <div id="conditions" class="conds"></div>
+      </div>
+
+      <div id="forecast" class="forecast-list" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="popup.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Ignore local API key and node_modules
+api_key.js
+node_modules/
+
+.idea/
